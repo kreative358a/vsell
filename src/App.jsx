@@ -102,42 +102,10 @@ const App = () => {
         </button>
       </div>
 
-      {sideIcon === "normal" ? (
-        <div className="flex border-2 border-[var(--borderColor)] w-[900px] max-w-[90%] mx-auto pl-4 pr-3 md:pl-14 md:pr-10 justify-between mt-20">
+      <div className="flex border-2 border-[var(--borderColor)] w-[900px] max-w-[90%] mx-auto pl-4 pr-3 md:pl-14 md:pr-10 justify-between mt-20">
           <div className="flex flex-row min-h-[210px]">
             <div className="  flex justify-center align-middle my-6 w-[160px]">
-              <LeftIcon />
-
-              <img
-                src={ComponentPng}
-                className="absolute w-16 ml-[120px] mt-[90px] border-[6px] rounded-full"
-              />
-              <p className="gradient absolute w-16 ml-[250px] mt-[126px] text-xl sm:text-2xl font-bold text-blue-400 ">
-                4881
-              </p>
-            </div>
-
-            <div className="flex flex-col ml-4">
-              <div className="flex flex-row  mt-4">
-                <p className="pt-0 font-medium text-2xl md:text-3xl lg:text-4xl">
-                  Anna Effective
-                </p>
-                <img className="w-10 h-10 ml-2 mt-1" src={verifyPng} />
-              </div>
-              <p className="text-xl md:text-2xl lg:text-3xl mt-2">
-                Double your income with me!
-              </p>
-            </div>
-          </div>
-          <div className="flex justify-center align-middle my-6 w-[160px] flex-row ">
-            <RightIcon />
-          </div>
-        </div>
-      ) : (
-        <div className="flex border-2 border-[var(--borderColor)] w-[900px] max-w-[90%] mx-auto pl-4 pr-3 md:pl-14 md:pr-10 justify-between mt-20">
-          <div className="flex flex-row min-h-[210px]">
-            <div className="  flex justify-center align-middle my-6 w-[160px]">
-              <RightIcon />
+              {sideIcon === "normal" ?  <LeftIcon /> : <RightIcon />}
 
               <img
                 src={ComponentPng}
@@ -157,10 +125,10 @@ const App = () => {
             </div>
           </div>
           <div className="flex justify-center align-middle my-6 w-[160px] flex-row ">
-            <LeftIcon />
+          {sideIcon === "normal" ?  <RightIcon /> : <LeftIcon />}
           </div>
         </div>
-      )}
+      
 
       <div className="flex">
         <button
